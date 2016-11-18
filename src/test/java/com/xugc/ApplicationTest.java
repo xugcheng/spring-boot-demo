@@ -1,4 +1,4 @@
-package com.icomwell.demo;
+package com.xugc;
 
 import org.junit.Before;
 import org.junit.Test;
