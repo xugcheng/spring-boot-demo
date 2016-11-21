@@ -1,6 +1,7 @@
 package com.xugc.index.action;
 
 import com.xugc.config.JdbcConfig;
+import com.xugc.config.RandomProperty;
 import com.xugc.index.exception.BusinessException;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class IndexController {
     @Autowired
     JdbcConfig jdbcConfig;
 
+    @Autowired
+    RandomProperty randomProperty;
+
     @RequestMapping(value = {"", "index"}, method = RequestMethod.GET)
     public String index() {
         return "Hello World!";
@@ -27,6 +31,11 @@ public class IndexController {
     @RequestMapping(value = "jdbc", method = RequestMethod.GET)
     public JdbcConfig jdbcConfig() {
         return this.jdbcConfig;
+    }
+
+    @RequestMapping(value = "random",method = RequestMethod.GET)
+    public RandomProperty randomProperty(){
+        return randomProperty;
     }
 
     @RequestMapping(value = "json",method = RequestMethod.GET)
