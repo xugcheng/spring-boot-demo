@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * Created by Administrator on 2016/11/18.
  */
 @Component
-@ConfigurationProperties(prefix = "jdbc", locations = "classpath:jdbc.properties")
+@ConfigurationProperties(prefix = "jdbc", locations = "classpath:jdbc-test.properties")
 public class JdbcConfig {
 
     private String dirver;
