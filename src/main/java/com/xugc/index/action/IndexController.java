@@ -4,6 +4,8 @@ import com.xugc.config.JdbcConfig;
 import com.xugc.config.RandomProperty;
 import com.xugc.index.exception.BusinessException;
 import io.swagger.annotations.Api;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class IndexController {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     JdbcConfig jdbcConfig;

@@ -9,6 +9,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 异步执行任务
  * Created by xuguocheng on 2016/11/22.
  */
 @Component
