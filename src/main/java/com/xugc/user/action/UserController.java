@@ -26,7 +26,6 @@ public class UserController {
     }
 
     @ApiOperation(value = "创建用户")
-    @ApiImplicitParam(name = "user",value = "用户实体",required = true,dataType = "User")
     @RequestMapping(value = "", method = RequestMethod.POST)
     public String postUsers(@ModelAttribute User user) {
         users.put(user.getId(), user);

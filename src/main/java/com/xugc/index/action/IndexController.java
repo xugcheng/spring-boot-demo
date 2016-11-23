@@ -1,5 +1,6 @@
 package com.xugc.index.action;
 
+import com.xugc.annotation.FuncValid;
 import com.xugc.config.JdbcConfig;
 import com.xugc.config.RandomProperty;
 import com.xugc.index.exception.BusinessException;
@@ -32,6 +33,7 @@ public class IndexController {
         return "Hello World!";
     }
 
+    @FuncValid(codes = "fn-1000-0001",desc = "配置查询权限")
     @RequestMapping(value = "jdbc", method = RequestMethod.GET)
     public JdbcConfig jdbcConfig() {
         return this.jdbcConfig;
