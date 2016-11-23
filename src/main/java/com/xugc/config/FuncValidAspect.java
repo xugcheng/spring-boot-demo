@@ -25,11 +25,11 @@ public class FuncValidAspect {
 
     private static Random random = new Random();
 
-    @Pointcut("@annotation(com.xugc.annotation.FuncValid)")
+    @Pointcut("execution(public * com.xugc..action..*.*(..))")
     public void funcValid() {
     }
 
-    @Before(value = "funcValid() && @annotation(fn)")
+    @Before("funcValid() && @annotation(fn)")
     public void doBefore(JoinPoint joinPoint,FuncValid fn) throws Throwable {
         logger.debug("验证权限,method:{},code:{},desc:{}",joinPoint.getSignature().toShortString(),Arrays.asList(fn.codes()),fn.desc());
         if(!random.nextBoolean()){
