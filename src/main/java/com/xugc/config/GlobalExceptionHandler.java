@@ -1,4 +1,4 @@
-package com.xugc.index.action;
+package com.xugc.config;
 
 import com.xugc.index.domain.Result;
 import com.xugc.index.exception.BusinessException;
