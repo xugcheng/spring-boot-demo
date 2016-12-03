@@ -30,10 +30,7 @@ public class FuncValidAspect {
     }
 
     @Before("funcValid() && @annotation(fn)")
-    public void doBefore(JoinPoint joinPoint,FuncValid fn) throws Throwable {
+    public void doBefore(JoinPoint joinPoint,FuncValid fn) throws Exception {
         logger.debug("验证权限,method:{},code:{},desc:{}",joinPoint.getSignature().toShortString(),Arrays.asList(fn.codes()),fn.desc());
-        if(!random.nextBoolean()){
-            throw new BusinessException("没有权限.");
-        }
     }
 }

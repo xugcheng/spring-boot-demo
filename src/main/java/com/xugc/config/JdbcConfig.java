@@ -1,5 +1,6 @@
 package com.xugc.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -7,23 +8,26 @@ import org.springframework.stereotype.Component;
  * Created by Administrator on 2016/11/18.
  */
 @Component
-@ConfigurationProperties(prefix = "jdbc")
 public class JdbcConfig {
 
-    private String dirver;
+    @Value("${spring.datasource.driver-class-name}")
+    private String driver;
 
+    @Value("${spring.datasource.url}")
     private String url;
 
+    @Value("${spring.datasource.username}")
     private String username;
 
+    @Value("${spring.datasource.password}")
     private String password;
 
     public String getDriver() {
-        return dirver;
+        return driver;
     }
 
-    public void setDriver(String dirver) {
-        this.dirver = dirver;
+    public void setDriver(String driver) {
+        this.driver = driver;
     }
 
     public String getUrl() {
@@ -52,8 +56,8 @@ public class JdbcConfig {
 
     @Override
     public String toString() {
-        return "DbConfig{" +
-                "dirver='" + dirver + '\'' +
+        return "JdbcConfig{" +
+                "driver='" + driver + '\'' +
                 ", url='" + url + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
