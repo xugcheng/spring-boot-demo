@@ -32,7 +32,7 @@ public class UserController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<User> getUserList() {
 
-        List<User> users1 = userService.getAllUsers();
+        Map<String, Object> users1 = userService.getAllUsers();
 
         logger.debug("users1:{}", users1);
 

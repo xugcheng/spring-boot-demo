@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by xuguocheng on 2016/12/3.
@@ -18,7 +19,7 @@ public class UserServiceImpl implements UserService {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public List<User> getAllUsers() {
-        return jdbcTemplate.queryForList("select * from user ", User.class);
+    public Map<String, Object> getAllUsers() {
+        return jdbcTemplate.queryForMap("select * from sch_user where id = 1");
     }
 }
