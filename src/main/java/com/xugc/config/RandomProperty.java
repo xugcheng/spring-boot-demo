@@ -59,15 +59,4 @@ public class RandomProperty {
     public void setTest2(Integer test2) {
         this.test2 = test2;
     }
-
-    @Override
-    public String toString() {
-        return "RandomProperty{" +
-                "value='" + value + '\'' +
-                ", number=" + number +
-                ", bignumer=" + bignumer +
-                ", test1=" + test1 +
-                ", test2=" + test2 +
-                '}';
-    }
 }
